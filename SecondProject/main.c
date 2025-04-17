@@ -11,7 +11,11 @@ double summe(int anzahl, double summand1, ...){
 }
 
 void ausgabe(char * wort1, ...){
-    
+    char **ptr = &wort1;
+    while(*ptr){
+        printf("%s ", *ptr++);
+
+    }
 }
 
 int main(int argc, char* argv[], char **envp) {
