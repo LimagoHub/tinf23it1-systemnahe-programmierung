@@ -23,8 +23,11 @@ double div(double a, double b) {
 
 int main(void) {
 
-    Operation x = add;
-    printf("%lf\n", x(1.0, 2.0));
+    Operation ops[] = {add,sub,mult,div };
+
+    for(int i = 0; i < 4; i++){
+        printf("%lf\n", ops[i](2, 3));
+    }
 
     MyFptrType ergebnis = sinnDesLebens;
     ergebnis();
