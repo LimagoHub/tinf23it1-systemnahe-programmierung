@@ -18,4 +18,6 @@
 void uart_init(RECEIVER_FUNCTION callback);
 uint8_t uart_read();
 void uart_write(uint8_t valueToSend);
+void uart_write_int(uint16_t valueToSend);
+void uart_write_double(double valueToSend);
 void uart_send_string(uint8_t * message);

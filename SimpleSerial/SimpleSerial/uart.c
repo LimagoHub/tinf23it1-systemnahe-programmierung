@@ -49,6 +49,12 @@ void uart_write_int(uint16_t valueToSend){
 	uart_send_string(buffer);
 }
 
+void uart_write_double(double valueToSend){
+	char buffer[20];
+	dtostrf(valueToSend, 10,2,buffer);
+	uart_send_string(buffer);
+}
+
 ISR (USART_RX_vect)
 {
 	myCallcBackFunction(UDR0)   ;                   // Write the data to the TX buffer

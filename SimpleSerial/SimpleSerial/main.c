@@ -23,12 +23,7 @@ int main(void)
 	
 	sei();
 	
-	uint16_t zahl = 12345;
-	uint8_t buffer[7];
-	
-	itoa(zahl,buffer, 10);
-	
-	uart_send_string(buffer);
+	uart_write_double(123.4);
 	uart_send_string("\r\n");
 	
     while (1) 
