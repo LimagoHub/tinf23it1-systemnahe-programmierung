@@ -6,30 +6,29 @@
  */ 
 
 #include <avr/io.h>
-#include <avr/interrupt.h>
-#include <stdlib.h>
 #include "uart.h"
-uint8_t ReceivedChar;
 
-void DoIt(uint8_t receivedChar){
-	uart_write(receivedChar);
+void doIt(char receivedChar) {
+	uart_write_char(receivedChar);
 }
-
-
 
 int main(void)
 {
-	uart_init(DoIt);
 	
-	sei();
-	
-	uart_write_double(123.4);
-	uart_send_string("\r\n");
-	
+	uart_init(doIt);
+
+
+	uart_write_string("Hallo Uart");
+	uart_write_string("\r\n");
+	uart_write_double(3.14);
+	uart_write_string("\r\n");
     while (1) 
     {
-		                  
-		         
+		  //uint8_t receivedData = uart_read_char();
+		  //uart_write_char(receivedData);                
+		 
+		   
+		    
 	 
     }
 }
